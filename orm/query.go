@@ -1223,6 +1223,11 @@ func (q *Query) CreateTable(opt *CreateTableOptions) error {
 	return err
 }
 
+func (q *Query) UpdateTable(opt *UpdateTableOptions) error {
+	_, err := q.db.ExecContext(q.ctx, newUpdateTableQuery(q, opt))
+	return err
+}
+
 func (q *Query) DropTable(opt *DropTableOptions) error {
 	_, err := q.db.ExecContext(q.ctx, newDropTableQuery(q, opt))
 	return err

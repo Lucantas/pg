@@ -455,6 +455,10 @@ func (db *baseDB) CreateTable(model interface{}, opt *orm.CreateTableOptions) er
 	return orm.CreateTable(db.db, model, opt)
 }
 
+func (db *baseDB) UpdateTable(model interface{}, opt *orm.UpdateTableOptions) error {
+	return orm.UpdateTable(db.db, model, opt)
+}
+
 // DropTable drops table for the model.
 func (db *baseDB) DropTable(model interface{}, opt *orm.DropTableOptions) error {
 	return orm.DropTable(db.db, model, opt)
